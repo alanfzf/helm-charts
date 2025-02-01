@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: komga
+  namespace: default
+  labels:
+    app: komga
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: komga
+  template:
+    metadata:
+      labels:
+        app: komga
+    spec:
+      containers:
+        - name: komga
+          image: gotson/komga
+          ports:
+            - containerPort: 25600
+          volumeMounts:
+            - name: komga-data
+              mountPath: /config
+            - name: komga-data
+              mountPath: /data
+      volumes:
+        - name: komga-data
+          persistentVolumeClaim:
+            claimName: komga-data
