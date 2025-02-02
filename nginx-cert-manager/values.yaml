@@ -1,0 +1,18 @@
+# custom configs of current chart
+nameSpace: &namespace nginx-cert-manager
+email: "alandavidg13@gmail.com"
+
+# configs for nginx-ingress controller
+controller:
+  hostNetwork: true
+  service:
+    type: ClusterIP
+dnsPolicy: ClusterFirstWithHostNet
+
+# configs for cert-manager
+startupapicheck:
+  timeout: 5m
+installCRDs: true
+global:
+  leaderElection:
+    namespace: *namespace
