@@ -2,13 +2,12 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-komga
-  namespace: default
   annotations:
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
 spec:
   ingressClassName: nginx
   tls:
-  - hosts: 
+  - hosts:
     - {{ .Values.domainName }}
     secretName: letsencrypt-prod
   rules:
