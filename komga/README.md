@@ -1,6 +1,5 @@
 # Install
 
 ```bash
-helm install komga . \
-    --namespace komga --create-namespace
+helm upgrade --install komga . --namespace komga --create-namespace
 ```

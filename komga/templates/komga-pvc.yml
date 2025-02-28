@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: komga-data
-  labels:
-    app: komga-data
+  name: komga-pvc
 spec:
   accessModes:
   - ReadWriteOnce
+  storageClassName: local-path
   resources:
     requests:
       storage: 10Gi

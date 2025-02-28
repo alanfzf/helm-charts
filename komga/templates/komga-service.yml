@@ -1,12 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: komga-service
-  labels:
-    app: komga
+  name: komga-svc
 spec:
   selector:
-    app: komga
+    app: komga-deploy
   ports:
     - port: 25600
       targetPort: 25600

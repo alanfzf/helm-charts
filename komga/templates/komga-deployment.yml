@@ -1,18 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: komga
-  labels:
-    app: komga
+  name: komga-deploy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: komga
+      app: komga-deploy
   template:
     metadata:
       labels:
-        app: komga
+        app: komga-deploy
     spec:
       containers:
         - name: komga
@@ -27,4 +25,4 @@ spec:
       volumes:
         - name: komga-data
           persistentVolumeClaim:
-            claimName: komga-data
+            claimName: komga-pvc
