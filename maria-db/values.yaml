@@ -1,0 +1,4 @@
+rootPassword: root
+databaseName: local_finanssoreal
+databaseUser: finanssoreal
+databasePassword: finanssoreal

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: maria-stateful-set
+spec:
+  serviceName: maria-svc
+  replicas: 1
+  selector:
+    matchLabels:
+      app: maria-stateful-set
+  template:
+    metadata:
+      labels:
+        app: maria-stateful-set
+    spec:
+      containers:
+        - name: database
+          image: mariadb:lts
+          envFrom:
+            - secretRef:
+                name: maria-secret
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - name: database-storage
+              mountPath: /var/lib/mysql
+      volumes:
+        - name: database-storage
+          persistentVolumeClaim:
+            claimName: maria-pvc
