@@ -1,0 +1,7 @@
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: mlb-l2
+spec:
+  ipAddressPools:
+  - first-pool
