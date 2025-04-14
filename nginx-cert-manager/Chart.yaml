@@ -29,6 +29,6 @@ dependencies:
     alias: nginx-ingress
   - name: cert-manager
     version: v1.17.0
-    repository: https://charts.jetstack.io
+    repository: "https://charts.jetstack.io"
     alias: cert-manager
     condition: cert-manager.enabled

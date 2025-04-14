@@ -2,12 +2,12 @@
 email: alandavidg13@gmail.com
 
 # configs for nginx-ingress controller
-nginx-ingress:
-  controller:
-    hostNetwork: true
-    service:
-      type: ClusterIP
-  dnsPolicy: ClusterFirstWithHostNet
+# nginx-ingress:
+#   controller:
+#     hostNetwork: true
+#     service:
+#       type: ClusterIP
+#   dnsPolicy: ClusterFirstWithHostNet
 
 # configs for cert-manager
 cert-manager:
